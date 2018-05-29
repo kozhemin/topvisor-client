@@ -158,7 +158,7 @@ class Connection
         $content = json_decode(curl_exec($this->http));
         curl_close($this->http);
 
-        if ($content->errors) {
+        if (isset($content->errors)) {
             throw new TopVisorException($content->errors);
         }
 
